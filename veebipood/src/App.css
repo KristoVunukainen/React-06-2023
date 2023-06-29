@@ -1,6 +1,9 @@
 /* .App {
   border: 1px solid black;
 } */
+body {
+  padding: 1vh;
+}
 
 .pilt {
   width: 150px;
@@ -28,4 +31,8 @@
 
 .nupp:active {
   text-decoration: underline;
+}
+
+button {
+  margin: 0.3vh;
 }
