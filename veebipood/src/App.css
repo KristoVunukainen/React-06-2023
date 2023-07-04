@@ -7,7 +7,6 @@ body {
 
 .pilt {
   width: 150px;
-  /* height: 100px; */
 }
 
 .pilt:hover {
@@ -35,4 +34,23 @@ body {
 
 button {
   margin: 0.3vh;
+}
+
+.hele{
+  background-color: aliceblue;
+  min-height: 100vh;
+}
+.tume{
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+}
+.kuldne{
+  color: goldenrod;
+  margin: 5px;
+}
+.muudalike {
+  color: rgb(231, 9, 42);
+  background-color: bisque;
+  border-radius: 8px;
 }
