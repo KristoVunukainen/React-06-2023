@@ -61,10 +61,17 @@ function Poed() {
             uuendaPoed (uuedPoed)
 
         }
+        const arvutaTahedKokku =() => {
+            let summa = 0;
+            poed.forEach (ükspood => summa = summa + ükspood.length );
+            return summa ;
+
+        }
         
     
   return (
     <div>
+        <div>{arvutaTahedKokku()}</div>
         <button onClick={reset}>Reset</button>
         <div>Kokku:{poed.length} tk </div>
         <button onClick={sorteeriAZ}>Sorteeri A-Z</button>

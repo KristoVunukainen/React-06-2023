@@ -1,5 +1,7 @@
 
 import React, { useRef, useState } from 'react'
+import tootedFailist from "../Data/Tooted.json"
+import { ToastContainer, toast } from 'react-toastify';
 
 function LisaToode() {
 const [sonum, uuendaSonum] = useState();
@@ -7,9 +9,13 @@ const inputiLuger = useRef();
 const lisa = ()=> {
   if (inputiLuger.current.value ==="") {
     uuendaSonum ("Tühja nimetusega toodet ei saa lisada!")
+    toast.success(" Tühja nimetusega toodet ei saa lisada!");
 
   } else {
     uuendaSonum("Toode lisatud: " + inputiLuger.current.value )
+    tootedFailist.push (inputiLuger.current.value);
+    toast.success("Edukalt " + inputiLuger.current.value +  " lisatud!");
+    inputiLuger.current.value =""
   }
 
   
@@ -21,6 +27,11 @@ const lisa = ()=> {
       <label>Toote nimi</label> <br />
       <input ref={inputiLuger} type="text" /> <br />
       <button onClick={lisa}>Lisa</button><br />
+              <ToastContainer
+        position='bottom-right'
+        autoClose={4000}
+        theme={localStorage.getItem("teema") === "tume" ? "light" : "dark"}
+         />
     </div>
   )
 }
