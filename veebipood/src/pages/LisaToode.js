@@ -6,6 +6,9 @@ import { ToastContainer, toast } from 'react-toastify';
 function LisaToode() {
 const [sonum, uuendaSonum] = useState();
 const inputiLuger = useRef();
+const hindref = useRef();
+const piltref = useRef();
+const aktiivref = useRef();
 const lisa = ()=> {
   if (inputiLuger.current.value ==="") {
     uuendaSonum ("Tühja nimetusega toodet ei saa lisada!")
@@ -13,9 +16,15 @@ const lisa = ()=> {
 
   } else {
     uuendaSonum("Toode lisatud: " + inputiLuger.current.value )
-    tootedFailist.push (inputiLuger.current.value);
+    tootedFailist.push ({
+      "nimi": inputiLuger.current.value,
+       "hind": Number (hindref.current.value),
+       "pilt": piltref.current.value});
     toast.success("Edukalt " + inputiLuger.current.value +  " lisatud!");
     inputiLuger.current.value =""
+    hindref.current.value="";
+    piltref.current.value="";
+    aktiivref.current.value="";
   }
 
   
@@ -26,6 +35,12 @@ const lisa = ()=> {
       <div>{sonum}</div>
       <label>Toote nimi</label> <br />
       <input ref={inputiLuger} type="text" /> <br />
+      <label>Toote hind</label> <br />
+      <input ref={hindref} type="text" /> <br />
+      <label>Toote pilt</label> <br />
+      <input ref={piltref} type="text" /> <br />
+      <label>Toote aktiivsus</label> <br />
+      <input ref={aktiivref} type="text" /> <br />
       <button onClick={lisa}>Lisa</button><br />
               <ToastContainer
         position='bottom-right'

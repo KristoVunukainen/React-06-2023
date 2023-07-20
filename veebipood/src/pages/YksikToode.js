@@ -7,10 +7,15 @@ const {index} = useParams();
 const leitud = tootedFailist[index] ;
 
   return (
-    <div>
+    <div> 
+    {leitud !== undefined &&
+      <>
       <div>Toote järjekorranumber: {index}</div>
-      <div>Toote nimi: {leitud}</div>
-      <div>Toote....:</div>
+      <div>Toote nimi: {leitud.nimi}</div>
+      <div>Toote hind: {leitud.hind}</div>
+      <div>Toote pilt: <img className='pilt' src={leitud.pilt} alt="" /> </div>
+      </>}
+      {leitud === undefined && <div>Toodet ei leitud</div>}
     </div>
   )
 }

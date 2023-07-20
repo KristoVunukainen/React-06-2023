@@ -13,11 +13,37 @@ const lisaOstukorvi =(toode) => {
 
 }
 
+const sorteeriAZ =() => {
+  tooted.sort((a,b)=> a.nimi.localeCompare (b.nimi) );
+  uuendaTooted (tooted.slice());
+
+}
+const sorteeriZA =() => {
+  tooted.sort((a,b)=> b.nimi.localeCompare (a.nimi) );
+  uuendaTooted (tooted.slice());
+  
+}
+const sorteeriHindKasv =() => {
+  tooted.sort((a,b)=> a.hind.localeCompare (b.hind) );
+  uuendaTooted (tooted.slice());
+  
+}
+const sorteeriHindKah =() => {
+  tooted.sort((a,b)=> b.hind.localeCompare (a.hind) );
+  uuendaTooted (tooted.slice());
+  
+}
+
   return (
     <div>
+      <button onClick={sorteeriAZ}>Sorteeri A-Z</button>
+      <button onClick={sorteeriZA}>Sorteeri Z-A</button>
+      <button onClick={sorteeriHindKasv}>Sorteeri hind kasvavalt</button>
+      <button onClick={sorteeriHindKah}>Sorteeri hind kahanevalt</button>
       {tooted.map((toode, index) => 
         <div>
-          {toode}
+          <img className='pilt' src={toode.pilt} alt="" />
+          {toode.nimi} - {toode.hind} $
           <button onClick={()=> lisaOstukorvi(toode)}>Lisa ostukorvi</button>
           <Link to = {"/toode/" + index}>
           <button>Vaata detailsemalt</button>

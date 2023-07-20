@@ -19,19 +19,32 @@ function Ostukorv() {
   const lisa =(toode) => {
     ostukorv.push (toode);
     uuendaOstukorv (ostukorv.slice());
+
+    const arvutakogusumma =() => {
+      let summa = 0
+      ostukorv.forEach(toode=> summa = summa + toode.hind)
+      return summa;
+    }
     
   }
 
   return (
     <div>
-      <button onClick={tyhjenda}>Tühjendan</button>
-      <div>{ostukorv.length} tk</div>
-      {ostukorv.map((toode, index) => <div key= {index}>{toode}
+      {ostukorv.length > 0 &&<button onClick={tyhjenda}>Tühjendan</button>}
+      {ostukorv.length > 0 && <div>{ostukorv.length} tk</div>}
+      {ostukorv.map((toode, index) =>
+       <div key= {index}>
+        {toode.nimi} - {toode.hind} $
       <button onClick={() => eemalda (index)}>x</button>
       <button onClick={()=> lisa (toode)}>+</button>
       </div>)}
+      {ostukorv.length === 0 &&
+      <div>
       Ostukorv on tühi.
-      <Link className='tooteidLisama' to="/">Mine tooteid lisama</Link>
+      <Link className='tooteidLisama' to="/tooted">Mine tooteid lisama</Link>
+      </div>}
+      {ostukorv.length > 0 && <div> Kokku: { arvutakogusumma ()} $ </div>}
+
     </div>
   )
 }

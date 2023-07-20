@@ -1,1 +1,10 @@
-["Äraspea", "Ülemiste", "Viimsi", "Rocca al Mare", "Magistrali", "Vesse", "Kristiine", "Järveotsa"]
+[
+    {"nimetus": "Äraspea", "aeg": "9-13", "tel": "56479382"},
+    {"nimetus": "Ülemiste", "aeg": "9-12", "tel": "56479382"},
+    {"nimetus": "Viimsi", "aeg": "8-12", "tel": "56479382"},
+    {"nimetus": "Rocca al Mare", "aeg": "9-23", "tel": "56479382"},
+    {"nimetus": "Magistrali", "aeg": "10-18", "tel": "56479382"},
+    {"nimetus": "Vesse", "aeg": "13-23", "tel": "56479382"},
+    {"nimetus": "Kristiine", "aeg": "9-12", "tel": "56479382"},
+    {"nimetus": "Järveotsa", "aeg": "9-12", "tel": "56479382"}
+]
